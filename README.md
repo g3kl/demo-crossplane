@@ -33,7 +33,7 @@ will use to connect to Dynatrace
 ```
 kubectl -n crossplane-system dt-details \
   --from-literal=DYNATRACE_ENV_URL=https://abc12345.live.dynatrace.com \
-  --from-literal=DYNATRACE_API_TOKEN=dt0c01.secret.sample
+  --from-literal=DYNATRACE_API_TOKEN=dt0c01.sample.secret
 ```
 
 ## Install Crossplane on Cluster
