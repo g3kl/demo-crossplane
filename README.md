@@ -20,6 +20,13 @@ kubectl create namespace crossplane-system
 
 ## Create DT Secret
 
+1. Generate a Dynatrace access token (for the configuration in this demo you only
+   need `settings.read` and `settings.write` but your token permissions will vary
+   if you add different types of config).
+
+   See [here](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs) for more info.
+
+
 Create a secret that the Terraform Provider for crossplane
 will use to connect to Dynatrace
 
