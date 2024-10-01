@@ -1,0 +1,13 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: example-remote
+spec:
+  forProvider:
+    source: Remote
+    module: git::https://github.com/dynatrace/obslab-crossplane?ref=main
+    entrypoint: config_as_code
+  # All Terraform outputs are written to the connection secret.
+  writeConnectionSecretToRef:
+    namespace: default
+    name: terraform-workspace
