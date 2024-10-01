@@ -37,7 +37,7 @@ Create a secret that the Terraform Provider for crossplane
 will use to connect to Dynatrace
 
 ```
-kubectl -n crossplane-system dt-details \
+kubectl -n crossplane-system create secret generic dt-details \
   --from-literal=DYNATRACE_ENV_URL=https://abc12345.live.dynatrace.com \
   --from-literal=DYNATRACE_API_TOKEN=dt0c01.sample.secret
 ```
