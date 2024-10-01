@@ -21,6 +21,8 @@ These providers contain the "know how" to communicate with individual backends (
 This tutorial uses Crossplane with the [Terraform provider](https://marketplace.upbound.io/providers/upbound/provider-terraform/v0.18.0).
 The tutorial also specifies [the Dynatrace terraform provider](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest) which "knows" how speak to Dynatrace.
 
+> So, crossplane has a Terraform provider and the Terraform provider in turn has a Dynatrace provider.
+
 Crossplane will be configured to watch a repository (your fork of this repository) for new Terraform configurations which it will then automatically apply to your Dynatrace environment.
 
 ![architecture diagram](images/crossplane-architecture.jpg)
