@@ -1,1 +1,44 @@
-TODO
+
+---
+apiVersion: tf.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  configuration: |
+    terraform {
+        required_providers {
+            dynatrace = {
+                version = "~> 1.0"
+                source = "dynatrace-oss/dynatrace"
+            }
+        }
+    }
+
+    # Pulls values from TF_VARS_*
+    # Which is set by the dt-details secret
+    variable "DYNATRACE_URL" {
+      description = "Dynatrace URL eg. https://abc12345.live.dynatrace.com"
+      type        = string
+      sensitive   = false
+    }
+
+    variable "DYNATRACE_API_TOKEN" {
+      description = "Dynatrace API Token"
+      type        = string
+      sensitive   = true
+    }
+
+    provider "dynatrace" {
+      dt_env_url   = var.DYNATRACE_URL
+      dt_api_token = var.DYNATRACE_API_TOKEN
+    }
+
+    // Modules _must_ use remote state. The provider does not persist state.
+    terraform {
+      backend "kubernetes" {
+        secret_suffix     = "providerconfig-default"
+        namespace         = "crossplane-system"
+        in_cluster_config = true
+      }
+    }
