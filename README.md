@@ -96,7 +96,9 @@ After about 1 minute you should see a new tag called `crossplane-created`.
 
 Look at [config_as_code/main.tf](https://github.com/Dynatrace/obslab-crossplane/blob/main/config_as_code/main.tf) for the definition of this tag rule.
 
-> Tip: You can add new `.tf` files inside this repo. Terraform will automatically pick up any `.tf` files inside the folder.
+> Tip: You can add new `.tf` files inside this folder. Terraform will automatically pick up any `.tf` files inside the folder.
+>
+> Exercise: Try creating a new tag called `crossplane-created-2`
 
 
 
