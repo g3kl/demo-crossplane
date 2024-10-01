@@ -4,7 +4,7 @@
 
 ![logical flow](images/auto-tags-dt-ui.png)
 
-Dynatrace has long been compatible with configuration as code using both Monaco and Terraform.
+Dynatrace has long been compatible with [configuration as code](https://docs.dynatrace.com/docs/manage/configuration-as-code) using both [Monaco](https://docs.dynatrace.com/docs/manage/configuration-as-code/monaco) and [Terraform](https://docs.dynatrace.com/docs/manage/configuration-as-code/terraform).
 
 Both Monaco and Terraform need to be triggered so usually this is handled by a pipeline, CRON Job or another regularly executing task.
 
