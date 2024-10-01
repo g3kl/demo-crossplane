@@ -1,0 +1,91 @@
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-terraform
+spec:
+  package: xpkg.upbound.io/upbound/provider-terraform:v0.17.0
+  runtimeConfigRef:
+    name: terraform
+---
+apiVersion: pkg.crossplane.io/v1beta1
+kind: DeploymentRuntimeConfig
+metadata:
+  name: terraform
+spec:
+  deploymentTemplate:
+    spec:
+      selector: {}
+      template:
+        spec:
+          containers:
+            - name: package-runtime
+              # TF_VAR here is important
+              # It defines a Terraform variable
+              # https://developer.hashicorp.com/terraform/cli/config/environment-variables
+              #
+              # Pull details from dt-details secret and set and env vars
+              # on the terraform-provider pod
+              # These will be used in the configuration block below
+              # to dynamically inject secret data
+              env:
+                - name: TF_VAR_DYNATRACE_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: dt-details
+                      key: DYNATRACE_ENV_URL
+                - name: TF_VAR_DYNATRACE_API_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: dt-details
+                      key: DYNATRACE_API_TOKEN
+              # for demo purposes
+              # run in -d debug mode
+              # also poll for changes more quickly (every 1m)
+              args:
+                - -d
+                - --poll=1m
+                - --max-reconcile-rate=10
+---
+apiVersion: tf.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  configuration: |
+    terraform {
+        required_providers {
+            dynatrace = {
+                version = "~> 1.0"
+                source = "dynatrace-oss/dynatrace"
+            }
+        }
+    }
+
+    # Pulls values from TF_VARS_*
+    # Which is set by the dt-details secret
+    variable "DYNATRACE_URL" {
+      description = "Dynatrace URL eg. https://abc12345.live.dynatrace.com"
+      type        = string
+      sensitive   = false
+    }
+
+    variable "DYNATRACE_API_TOKEN" {
+      description = "Dynatrace API Token"
+      type        = string
+      sensitive   = true
+    }
+
+    provider "dynatrace" {
+      dt_env_url   = var.DYNATRACE_URL
+      dt_api_token = var.DYNATRACE_API_TOKEN
+    }
+
+    // Modules _must_ use remote state. The provider does not persist state.
+    terraform {
+      backend "kubernetes" {
+        secret_suffix     = "providerconfig-default"
+        namespace         = "crossplane-system"
+        in_cluster_config = true
+      }
+    }
