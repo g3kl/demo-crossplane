@@ -72,7 +72,7 @@ kubectl -n crossplane-system create secret generic dt-details \
 # Install Crossplane
 helm repo add crossplane-stable https://charts.crossplane.io/stable
 helm repo update
-helm install crossplane --namespace crossplane-system --wait crossplane-stable/crossplane 
+helm install crossplane --namespace crossplane-system --wait crossplane-stable/crossplane --values crossplane-values.yaml
 ```
 
 ## Install and Configure Terraform provider
