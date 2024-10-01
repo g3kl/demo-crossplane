@@ -56,10 +56,26 @@ helm install crossplane --namespace crossplane-system --wait crossplane-stable/c
 kubectl apply -f terraform-config.yaml
 ```
 
+Wait for the Terraform provider pod to be `Ready`:
+
+```
+kubectl -n crossplane-system wait pod --for condition=Ready -l pkg.crossplane.io/provider=provider-terraform
+```
+
+## Configure Terraform Provider
+
+Configure the Terraform provider to know all about Dynatrace.
+
+```
+kubectl apply -f terraform-provider-config.yaml
+```
+
 ## Point Crossplane to your Fork
 
 * ✔️ Crossplane is installed
 * ✔️ Terraform is installed
+* ✔️ Terraform knows how to "talk to" Dynatrace
+* ⛔ Terraform doesn't know where the configuration as code is stored
 
 However, we haven't told terraform **where** the Dynatrace configuration as code lives.
 This is done via a `Workspace` custom resource.
