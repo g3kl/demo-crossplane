@@ -4,6 +4,8 @@
 
 ## Create Cluster
 
+Download and add [kind](https://kind.sigs.k8s.io) to your `PATH`
+
 ```
 kind create cluster
 ```
