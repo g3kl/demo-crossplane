@@ -86,7 +86,7 @@ Modify `workspace-remote.yaml` and change `dynatrace/obslab-crossplane` to the d
 For example, if your account was `SomeUser` and the repo was called `obslab-crossplane` then line 8 would look like this:
 
 ``
-    module: git::https://github.com/SomeUser/obslab-crossplane?ref=main`
+    module: git::https://github.com/SomeUser/obslab-crossplane?ref=main
 ``
 
 Apply that file:
