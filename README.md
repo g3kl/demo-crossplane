@@ -2,6 +2,15 @@
 
 > :warning: This is a work in progress
 
+Dynatrace has long been compatible with configuration as code using both Monaco and Terraform.
+
+Both Monaco and Terraform need to be triggered so usually this is handled by a pipeline, CRON Job or another regularly executing task.
+
+[Crossplane](https://www.crossplane.io/) is a CNCF project which can bring true automated GitOps workflows to managing Dynatrace configuration.
+
+Crossplane uses 
+This tutorial uses Crossplan
+
 ## Fork this repository
 
 You will be making changes to the code in this repo. So begin by forking this repo to your own account.
@@ -113,6 +122,9 @@ Look at [config_as_code/main.tf](https://github.com/Dynatrace/obslab-crossplane/
 >
 > Exercise: Try creating a new tag called `crossplane-created-2`
 
+## TODO List
+
+* Observing crossplane - this tutorial or a new one?
 
 
 
