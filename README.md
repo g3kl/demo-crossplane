@@ -6,7 +6,7 @@ Dynatrace has long been compatible with configuration as code using both Monaco 
 
 Both Monaco and Terraform need to be triggered so usually this is handled by a pipeline, CRON Job or another regularly executing task.
 
-![architecture diagram](images/crossplane-architecture.jpg)
+Crossplane provides a way to have a 24/7 automated reconciliation loop without needing to trigger Monaco or Terraform on demand.
 
 ## Quick overview of Crossplane
 
@@ -20,6 +20,8 @@ This tutorial uses Crossplane with the [Terraform provider](https://marketplace.
 The tutorial also specifies [the Dynatrace terraform provider](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest) which "knows" how speak to Dynatrace.
 
 Crossplane will be configured to watch a repository (your fork of this repository) for new Terraform configurations which it will then automatically apply to your Dynatrace environment.
+
+![architecture diagram](images/crossplane-architecture.jpg)
 
 ## Fork this repository
 
