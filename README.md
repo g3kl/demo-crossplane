@@ -6,11 +6,13 @@ Dynatrace has long been compatible with configuration as code using both Monaco 
 
 Both Monaco and Terraform need to be triggered so usually this is handled by a pipeline, CRON Job or another regularly executing task.
 
+![architecture diagram](images/architecture.jpg)
+
 ## Quick overview of Crossplane
 
 [Crossplane](https://www.crossplane.io/) is a CNCF project which can bring true automated GitOps workflows to managing Dynatrace configuration.
 
-Crossplane itself, of course, doesn't know how to talk to infrastructure providers like AWS or Dynatrace. So you need to install a crossplane Provider.
+Crossplane itself, of course, doesn't know how to talk to infrastructure providers like AWS or Dynatrace. So you need to install a Crossplane Provider.
 
 These providers contain the "know how" to communicate with individual backends (like AWS) or in this case, Terraform.
 
