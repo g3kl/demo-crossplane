@@ -6,7 +6,7 @@ Dynatrace has long been compatible with configuration as code using both Monaco 
 
 Both Monaco and Terraform need to be triggered so usually this is handled by a pipeline, CRON Job or another regularly executing task.
 
-![architecture diagram](images/architecture.jpg)
+![architecture diagram](images/crossplane-architecture.jpg)
 
 ## Quick overview of Crossplane
 
