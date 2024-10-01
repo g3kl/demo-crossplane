@@ -2,6 +2,10 @@
 
 > :warning: This is a work in progress
 
+## Fork this repository
+
+You will be making changes to the code in this repo. So begin by forking this repo to your own account.
+
 ## Create Cluster
 
 Download and add [kind](https://kind.sigs.k8s.io) to your `PATH`.
