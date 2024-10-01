@@ -6,6 +6,8 @@
 
 You will be making changes to the code in this repo. So begin by forking this repo to your own account.
 
+Make all changes in your fork.
+
 ## Create Cluster
 
 Download and add [kind](https://kind.sigs.k8s.io) to your `PATH`.
@@ -52,8 +54,34 @@ crossplane-stable/crossplane
 kubectl -n crossplane-system wait --for=condition=Ready --all --timeout 120s pod
 ```
 
-# Install and Configure Terraform provider
+## Install and Configure Terraform provider
 
 ```
 kubectl apply -f terraform-config.yaml
 ```
+
+## Point Crossplane to your Fork
+
+* ✔️ Crossplane is installed
+* ✔️ Terraform is installed
+
+However, we haven't told terraform **where** the Dynatrace configuration as code lives.
+This is done via a `Workspace` custom resource.
+
+Modify `workspace-remote.yaml` and change `dynatrace/obslab-crossplane` to the details of your fork.
+
+For example, if your account was `SomeUser` and the repo was called `obslab-crossplane` then line 8 would look like this:
+
+``
+    module: git::https://github.com/SomeUser/obslab-crossplane?ref=main`
+``
+
+Apply that file:
+
+```
+kubectl apply -f workspace-remote.yaml
+```
+
+
+
+
