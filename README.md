@@ -77,7 +77,8 @@ kubectl apply -f terraform-provider-config.yaml
 * ✔️ Terraform knows how to "talk to" Dynatrace
 * ⛔ Terraform doesn't know where the configuration as code is stored
 
-However, we haven't told terraform **where** the Dynatrace configuration as code lives.
+
+Tell Terraform where the configuration as code (eg. auto tag rules) reside.
 This is done via a `Workspace` custom resource.
 
 Modify `workspace-remote.yaml` and change `dynatrace/obslab-crossplane` to the details of your fork.
