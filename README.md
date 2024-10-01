@@ -2,6 +2,8 @@
 
 > :warning: This is a work in progress
 
+![logical flow](images/auto-tags-dt-ui.png)
+
 Dynatrace has long been compatible with configuration as code using both Monaco and Terraform.
 
 Both Monaco and Terraform need to be triggered so usually this is handled by a pipeline, CRON Job or another regularly executing task.
