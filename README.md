@@ -85,5 +85,19 @@ kubectl apply -f workspace-remote.yaml
 🎊 Crossplane and terraform are now monitoring your Git repo for changes and will auto-sync any updates
 
 
+## View Created Settings
+
+In dynatrace:
+
+* Press `ctrl + k`. Search for `settings`
+* Go to `Settings > Tags > Automatically applied tags`
+
+After about 1 minute you should see a new tag called `crossplane-created`.
+
+Look at [config_as_code/main.tf](https://github.com/Dynatrace/obslab-crossplane/blob/main/config_as_code/main.tf) for the definition of this tag rule.
+
+> Tip: You can add new `.tf` files inside this repo. Terraform will automatically pick up any `.tf` files inside the folder.
+
+
 
 
