@@ -1,7 +1,5 @@
 # Observability Lab: Using Crossplane to Automate Dynatrace Configuration as Code on Kubernetes
 
-> :warning: This is a work in progress
-
 ![logical flow](docs/images/auto-tags-dt-ui.png)
 
 Dynatrace has long been compatible with [configuration as code](https://docs.dynatrace.com/docs/manage/configuration-as-code) using both [Monaco](https://docs.dynatrace.com/docs/manage/configuration-as-code/monaco) and [Terraform](https://docs.dynatrace.com/docs/manage/configuration-as-code/terraform).
