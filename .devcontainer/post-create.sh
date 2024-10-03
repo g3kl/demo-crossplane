@@ -43,6 +43,12 @@ kubectl -n crossplane-system wait --for condition=established --timeout=60s crd/
 
 kubectl apply -f terraform-provider-config.yaml
 
+# replace placeholder with actual repo
+sed -i "s@GITHUB_REPOSITORY_PLACEHOLDER@$GITHUB_REPOSITORY@g" workspace-remote.yaml
+
+# Create workspace (this tells crossplane to start monitoring this Git repo)
+kubectl apply -f workspace-remote.yaml
+
 # Creation Ping
 # curl -X POST https://grzxx1q7wd.execute-api.us-east-1.amazonaws.com/default/codespace-tracker \
 #   -H "Content-Type: application/json" \
