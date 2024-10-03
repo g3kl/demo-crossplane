@@ -50,12 +50,12 @@ sed -i "s@GITHUB_REPOSITORY_PLACEHOLDER@$GITHUB_REPOSITORY@g" workspace-remote.y
 kubectl apply -f workspace-remote.yaml
 
 # Creation Ping
-# curl -X POST https://grzxx1q7wd.execute-api.us-east-1.amazonaws.com/default/codespace-tracker \
-#   -H "Content-Type: application/json" \
-#   -d "{
-#     \"tenant\": \"$DT_ENV_ID_OBSLAB_CROSSPLANE\",
-#     \"dt_environment\": \"$DT_ENVIRONMENT_OBSLAB_CROSSPLANE\",
-#     \"repo\": \"$GITHUB_REPOSITORY\",
-#     \"demo\": \"obslab-crossplane\",
-#     \"codespace.name\": \"$CODESPACE_NAME\"
-#   }"
+curl -X POST https://grzxx1q7wd.execute-api.us-east-1.amazonaws.com/default/codespace-tracker \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"tenant\": \"$DT_ENV_ID_OBSLAB_CROSSPLANE\",
+    \"dt_environment\": \"$DT_ENVIRONMENT_OBSLAB_CROSSPLANE\",
+    \"repo\": \"$GITHUB_REPOSITORY\",
+    \"demo\": \"obslab-crossplane\",
+    \"codespace.name\": \"$CODESPACE_NAME\"
+  }"
