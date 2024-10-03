@@ -35,8 +35,17 @@ In Dynatrace:
 
 Click this button to open the demo environment. This will open in a new tab.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dynatrace/obslab-crossplane){target="_blank"}
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new){target="_blank"}
 
+!!! info "Use your repository"
+    In the repository dropdown
+    be sure to use `yourUsername/obslab-crossplane`
+
+!!! tip "Price"
+    GitHub includes a generous free tier.
+    If you follow the [cleanup](cleanup.md){target=_blank} instructions to delete your codespace once done, you will not be charged.
+
+* Select your repository from the repository dropdown box.
 * Fill in the form with the details you've already gathered.
 * Click `Create codespace`
 * Proceed to the next documentation step with the link below.
