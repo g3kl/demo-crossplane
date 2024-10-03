@@ -2,21 +2,21 @@
 
 #############################################################################
 # Build URL from parts
-full_apps_url="https://${DT_ENV_ID_OBSLAB_UNGUARD}"
+full_apps_url="https://${DT_ENV_ID_OBSLAB_CROSSPLANE}"
 full_gen2_url=""
 
-if [ "${DT_ENVIRONMENT_OBSLAB_UNGUARD}" = "dev" ]; then
+if [ "${DT_ENVIRONMENT_OBSLAB_CROSSPLANE}" = "dev" ]; then
   echo "environment is dev"
   full_apps_url+=".dev.apps.dynatracelabs.com"
   # Remove apps.
   full_gen2_url=${full_apps_url/apps.}
-elif [ "${DT_ENVIRONMENT_OBSLAB_UNGUARD}" = "sprint" ]; then
+elif [ "${DT_ENVIRONMENT_OBSLAB_CROSSPLANE}" = "sprint" ]; then
   echo "environment is sprint"
   full_apps_url+=".sprint.apps.dynatracelabs.com"
   # Remove apps.
   full_gen2_url=${full_apps_url/apps.}
 else
-  echo "DT_ENVIRONMENT_OBSLAB_UNGUARD is either 'live' or some other value. Defaulting to live"
+  echo "DT_ENVIRONMENT_OBSLAB_CROSSPLANE is either 'live' or some other value. Defaulting to live"
   full_apps_url+=".apps.dynatrace.com"
   full_gen2_url=${full_apps_url/.apps./.live.}
 fi
