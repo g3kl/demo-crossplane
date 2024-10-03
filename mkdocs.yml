@@ -1,0 +1,55 @@
+site_name: "Dynatrace Observability Lab: Automated Dynatrace Configuration as Code with Crossplane"
+repo_name: "View Code on GitHub"
+repo_url: "https://github.com/dynatrace/obslab-crossplane"
+nav:
+  - 'Run the Tutorial':
+    - '1. About': index.md
+    - '2. Getting Started': getting-started.md
+    - '3. Installation Explained': installation-explained.md
+    - '4. View Configuration in Dynatrace': view-configuration.md
+  
+  - 'Recap, Cleanup and Next Steps':
+    - '8. Cleanup': cleanup.md
+    - '9. Resources': resources.md
+    - "10. What's Next?": whats-next.md
+theme:
+  name: material
+  palette:
+
+  # Palette toggle for automatic mode
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default 
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to system preference
+  features:
+    - content.code.copy
+    - navigation.sections
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: '#'
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+plugins:
+    - search
+    - markdownextradata
