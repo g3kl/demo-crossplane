@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/kubernetes-helm
+{
+	"name": "Crossplane environment",
+	"dockerFile": "Dockerfile",
+
+	// do not change these if you want Docker in Docker support
+	"runArgs": ["--init", "--privileged", "--network=host"],
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"overrideCommand": false,
+
+	// some base images require a specific user name
+	"remoteUser": "vscode",
+
+	// Install extensions
+	"customizations": {
+		"vscode": {	
+			// Set container specific settings
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			},			
+			"extensions": []
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	//"forwardPorts": ["8080"],
+
+	// add labels
+	// "portsAttributes": {
+	// 	"8080": { "label": "Unguard User Interface" }
+	// },
+
+	"hostRequirements": {
+		"cpus": 2
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": ".devcontainer/post-create.sh",
+
+	// Add recommended secrets
+	"secrets": {
+	 	  "DT_ENV_ID_OBSLAB_CROSSPLANE": {
+	 		"description": "eg. abc12345 from https://abc12345.live.dynatrace.com"
+		},
+		  "DT_ENVIRONMENT_OBSLAB_CROSSPLANE": {
+	    	        "description": "live, sprint or dev. Defaults to live"
+		},
+		  "DT_API_TOKEN_OBSLAB_CROSSPLANE": {
+			"description": "API token with settings.read and settings.write permissions"
+		  }
+	}
+}
