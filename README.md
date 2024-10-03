@@ -120,7 +120,7 @@ Apply that file:
 kubectl apply -f workspace-remote.yaml
 ```
 
-🎊 Crossplane and terraform are now monitoring your Git repo for changes and will auto-sync any updates
+🎊 Crossplane and terraform are now monitoring the `config_as_code` directory of your Git repo for changes and will auto-sync any updates.
 
 
 ## View Created Settings
