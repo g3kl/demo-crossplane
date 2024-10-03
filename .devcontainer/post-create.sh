@@ -37,7 +37,9 @@ helm repo update
 helm install crossplane --namespace crossplane-system --wait crossplane-stable/crossplane --values crossplane-values.yaml
 
 kubectl apply -f terraform-config.yaml
+sleep 5 # small sleep while objects are created in k8s
 kubectl -n crossplane-system wait pod --for condition=Ready -l pkg.crossplane.io/provider=provider-terraform
+kubectl -n crossplane-system wait --for condition=established --timeout=60s crd/providerconfigs.tf.upbound.io
 
 kubectl apply -f terraform-provider-config.yaml
 
