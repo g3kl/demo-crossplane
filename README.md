@@ -1,4 +1,4 @@
-# obslab-crossplane
+# Observability Lab: Using Crossplane to Automate Dynatrace Configuration as Code on Kubernetes
 
 > :warning: This is a work in progress
 
