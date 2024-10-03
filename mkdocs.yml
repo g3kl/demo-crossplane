@@ -9,9 +9,9 @@ nav:
     - '4. View Configuration in Dynatrace': view-configuration.md
   
   - 'Recap, Cleanup and Next Steps':
-    - '8. Cleanup': cleanup.md
-    - '9. Resources': resources.md
-    - "10. What's Next?": whats-next.md
+    - 'Cleanup': cleanup.md
+    - 'Resources': resources.md
+    - "What's Next?": whats-next.md
 theme:
   name: material
   palette:
