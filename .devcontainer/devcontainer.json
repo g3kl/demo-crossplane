@@ -28,7 +28,7 @@
 
 	// add labels
 	// "portsAttributes": {
-	// 	"8080": { "label": "Unguard User Interface" }
+	// 	"8080": { "label": "User Interface" }
 	// },
 
 	"hostRequirements": {
