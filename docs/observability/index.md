@@ -1,5 +1,8 @@
 # Crossplane Observability
 
+!!! warning "Under Construction"
+    This section is a work in progress.
+
 Crossplane is running but it makes sense that we should be making sure that Crossplane is behaving correctly.
 
 Let's start by sending the metrics from crossplane into Dynatrace.
@@ -42,5 +45,6 @@ Annotations:      prometheus.io/path: /metrics
 
 ## Install OpenTelemetry Collector
 
-!!! note "foo"
-    gfkjd
+```
+
+```
