@@ -26,6 +26,7 @@ In Dynatrace:
 * Create a new access token with the following permissions:
     * `settings.read`
     * `settings.write`
+    * `metrics.ingest`
 
 !!! info "Token used by Crossplane"
     Crossplane will use this API token to push and pull data
