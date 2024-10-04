@@ -47,7 +47,7 @@
 	    	        "description": "live, sprint or dev. Defaults to live"
 		},
 		  "DT_API_TOKEN_OBSLAB_CROSSPLANE": {
-			"description": "API token with settings.read and settings.write permissions"
+			"description": "API token with settings.read, settings.write and metrics.ingest permissions"
 		  }
 	}
 }
