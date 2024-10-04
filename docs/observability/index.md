@@ -45,6 +45,12 @@ Annotations:      prometheus.io/path: /metrics
 
 ## Install OpenTelemetry Collector
 
-```
+Create a `ClusterRole` and `ClusterRole` binding which allows the collector `ServiceAccount`
+to communicate with the Kubernetes API to gather pod annotations.
 
+Then install the collector.
+
+```
+kubectl apply -f collector-rbac.yaml
+helm upgrade -i -n crossplane-system dynatrace-collector open-telemetry/opentelemetry-collector -f collector-values.yaml
 ```
