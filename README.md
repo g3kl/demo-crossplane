@@ -31,7 +31,7 @@ You will be making changes to the code in this repo. So begin by forking this re
 
 Make all changes in your fork.
 
-## [Start the hands-on here >>](https://dynatrace.github.io/obslab-crossplane)
+## [Start the hands-on here >>](https://dynatrace.github.io/demo-crossplane)
 
 
 
