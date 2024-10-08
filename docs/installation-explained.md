@@ -16,9 +16,9 @@ Onto that cluster, the startup script:
 
 * Creates a namespace `crossplane-system`
 * Creates a secret in that namespace `dt-details` which stores your Dynatrace endpoint and API token
-* Installs the Crossplane Terraform provider and configures it to run in debug mode, poll repositories every minute and attemp a maximum of 10 concurrent reconcilliations (see [terraform-config.yaml](https://github.com/Dynatrace/obslab-crossplane/blob/main/terraform-config.yaml){target=_blank})
-* Configures the Crossplane Terraform provider to use the Dynatrace provider (see [terraform-provider-config.yaml](https://github.com/Dynatrace/obslab-crossplane/blob/main/terraform-provider-config.yaml){target=_blank})
-* Modifies [workspace-remote.yaml](https://github.com/Dynatrace/obslab-crossplane/blob/main/workspace-remote.yaml){target=_blank} to point to your repository
+* Installs the Crossplane Terraform provider and configures it to run in debug mode, poll repositories every minute and attemp a maximum of 10 concurrent reconcilliations (see [terraform-config.yaml](https://github.com/Dynatrace/demo-crossplane/blob/main/terraform-config.yaml){target=_blank})
+* Configures the Crossplane Terraform provider to use the Dynatrace provider (see [terraform-provider-config.yaml](https://github.com/Dynatrace/demo-crossplane/blob/main/terraform-provider-config.yaml){target=_blank})
+* Modifies [workspace-remote.yaml](https://github.com/Dynatrace/demo-crossplane/blob/main/workspace-remote.yaml){target=_blank} to point to your repository
 
 
 !!! info "Summary"

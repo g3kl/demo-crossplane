@@ -40,7 +40,7 @@ Click this button to open the demo environment. This will open in a new tab.
 
 !!! info "Use your repository"
     In the repository dropdown
-    be sure to use `yourUsername/obslab-crossplane`
+    be sure to use `yourUsername/demo-crossplane`
 
 !!! tip "Price"
     GitHub includes a generous free tier.

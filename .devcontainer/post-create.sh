@@ -56,6 +56,6 @@ curl -X POST https://grzxx1q7wd.execute-api.us-east-1.amazonaws.com/default/code
     \"tenant\": \"$DT_ENV_ID_OBSLAB_CROSSPLANE\",
     \"dt_environment\": \"$DT_ENVIRONMENT_OBSLAB_CROSSPLANE\",
     \"repo\": \"$GITHUB_REPOSITORY\",
-    \"demo\": \"obslab-crossplane\",
+    \"demo\": \"demo-crossplane\",
     \"codespace.name\": \"$CODESPACE_NAME\"
   }"
