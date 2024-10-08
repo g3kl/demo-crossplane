@@ -1,1 +1,3 @@
-Content here about what the user should do, where they should and what they could learn next.
+## TODO
+
+1. This Observability Lab will be expanded to include a second tutorial on how to configure Observability for Crossplane.

@@ -1,11 +1,11 @@
 # Crossplane Observability
 
-!!! warning "Under Construction"
-    This section is a work in progress.
+!!! danger "Under Construction"
+    This section is a work in progress and is not yet ready for consumption.
 
 Crossplane is running but it makes sense that we should be making sure that Crossplane is behaving correctly.
 
-Let's start by sending the metrics from crossplane into Dynatrace.
+<!-- Let's start by sending the metrics from crossplane into Dynatrace.
 
 ## 1. Enable Metrics
 
@@ -53,4 +53,4 @@ Then install the collector.
 ```
 kubectl apply -f collector-rbac.yaml
 helm upgrade -i -n crossplane-system dynatrace-collector open-telemetry/opentelemetry-collector -f collector-values.yaml
-```
+``` -->
