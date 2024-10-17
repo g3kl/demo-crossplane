@@ -1,7 +1,7 @@
 # Using Crossplane to Automate Dynatrace Configuration as Code on Kubernetes
 
-!!! tip "Larger Images"
-    To enlarge images, right click and open in new tab.
+--8<-- "snippets/disclaimer.md"
+--8<-- "snippets/view-code.md"
 
 In this hands-on demo, you will use [Crossplane](https://crossplane.io){target=_blank} and [Terraform](https://docs.dynatrace.com/docs/manage/configuration-as-code/terraform){target=_blank} configuration as code to keep Dynatrace in sync automatically.
 
@@ -9,6 +9,9 @@ In this hands-on demo, you will use [Crossplane](https://crossplane.io){target=_
 1. Terraform code is stored in your forked Git repository
 1. Crossplane watches this Git repo
 1. Crossplane ensures the state declared in Git == the state in Dynatrace
+
+!!! tip "Larger Images"
+    To enlarge images, right click and open in new tab.
 
 ![logical flow](images/auto-tags-dt-ui.png)
 
